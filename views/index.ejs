@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      HODLINFO
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/30a716e005.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="header">
+        <h1 class="title">HODLINFO<small class="com">.com</small></h1>
+        <p class="powered">Powered By <span class="FinStreet">FinStreet</span></p>
+      </div>
+
+      <div class="dropdown" id="Dropdown">
+        <select class="inr" name="INR">
+          <option value="INR" class="dropdownOption">INR</option>
+        </select>
+      </div>
+      <div class="dropdown" id="Dropdown">
+        <select class="inr" name="BTC" id="btc">
+          <option value="BTC" class="dropdownOption">BTC</option>
+        </select>
+      </div>
+      <div class="theNo">
+        <p class="no">58</p>
+      </div>
+      <div class="telegramButton">
+        <a href="#" class="myButton"><i class="fas fa-paper-plane"></i>Connect Telegram</a>
+      </div>
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+         </label>
+      </div>
+    </div>
+
+    <table>
+      <tbody>
+        <tr class="tableHeaders">
+          <th class="columNo">#</th>
+          <th class="name">name</th>
+          <th class="last">Last</th>
+          <th class="buysell"><p>Buy / Sell Price</p></th>
+          <th class="volume">volume</th>
+          <th class="baseunit">base_unit</th>
+        </tr>
+
+        <% for(var i=0;i<stocks.name.length;i++){ %>
+          <tbody>
+            <tr class="space"></tr>
+            <tr class="dataRow">
+              <td><%=i+1%></td>
+              <td><%= stocks.name[i] %></td>
+              <td><%= stocks.last[i] %></td>
+              <td>₹<%= stocks.buy[i] %> / ₹<%= stocks.sell[i] %></td>
+              <td><%= stocks.volume[i] %></td>
+              <td><%= stocks.base_unit[i] %></td>
+            </tr>
+          </tbody>
+        <% } %>
+      </tbody>
+    </table>
+
+  </body>
+</html>
